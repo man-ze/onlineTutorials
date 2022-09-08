@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #c5cae9, #536dfe);
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  /* background: rgba(alpha) , menubar 에 투명도 */
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0 100px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.menu img {
+  float: left;
+  /* menu bar 의 너비 */
+  width: 80px;
+}
+
+nav {
+  position: relative;
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  /* 대문자로 변환 */
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 35px 20px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background: #3949ab;
+  color: #fff;
+}
+
+/* dropdown list */
+nav ul li ul {
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  min-width: 250px;
+  position: absolute;
+  margin-top: 1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  /* 투명도 0 으로 (완전투명) */
+  opacity: 0;
+  /* menu bar 안보이게 */
+  visibility: hidden;
+  transition: 0.5s;
+  transform: translateY(40px);
+}
+
+/* 마우스 hover 시, menu bar 보이게 transtion 및 trasmform 처리 */
+nav ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+nav ul li ul li a {
+  padding: 10px;
+}
